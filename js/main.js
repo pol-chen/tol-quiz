@@ -62,21 +62,13 @@ var questions = [{
     ]
   }];
 
-function buildOption(op, i) {
-  var feedback = op.correct ? 'correct' : 'wrong';
-  var nums = ['A', 'B', 'C', 'D'];
-  var num = nums[i];
-  return '<div class="frame option" data-next="#scene-' + feedback + '">\
-    <p>' + num + '. ' + op.desc + '</p>\
-  </div>';
-}
-
 var current = 0;
+var quiz = questions;
 
 function loadQuestion() {
   console.log('LOAD Q' + (current + 1));
 
-  var p = questions[current++];
+  var p = quiz[current++];
   $('#scene-question h2').text('Question ' + current);
   $('#scene-question p').text(p.desc);
   if (p.image.length > 0) {
@@ -93,6 +85,15 @@ function loadQuestion() {
       $('#scene-wrong p').text(option.feedback);
     }
   });
+}
+
+function buildOption(op, i) {
+  var feedback = op.correct ? 'correct' : 'wrong';
+  var nums = ['A', 'B', 'C', 'D'];
+  var num = nums[i];
+  return '<div class="frame option" data-next="#scene-' + feedback + '">\
+    <p>' + num + '. ' + op.desc + '</p>\
+  </div>';
 }
 
 /* Scene */
@@ -147,7 +148,7 @@ $(document).ready(function () {
     }
   })
   $('.btn-next-question').click(function () {
-    if (current == questions.length) {
+    if (current == quiz.length) {
       showScene('#scene-end');
     } else {
       showScene('#scene-question', loadQuestion);
