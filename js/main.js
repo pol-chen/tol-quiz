@@ -102,14 +102,12 @@ function hideBoard() {
   $('.scene').hide();
   $('#board').hide();
 }
-function showBoard() {
+function showBoard(scene) {
   $('.scene').hide();
   $('#board').show();
+  showScene(scene);
 }
 
-function startScene(scene) {
-  $(scene).fadeIn();
-}
 function continueScene(el) {
   var next = $(el).data('next');
   console.log(next);
@@ -136,12 +134,9 @@ function showScene(target, prep) {
   }
 }
 
-$(document).ready(function () {
-  loadQuestion();
+/* Event */
 
-  showBoard();
-  $('#scene-start').show();
-
+function registerEvents() {
   $('.btn-continue').click(function () {
     if (!$(this).hasClass('btn-disabled')) {
       continueScene(this);
@@ -187,4 +182,10 @@ $(document).ready(function () {
       $btn.removeClass('btn-disabled');
     }
   })
-})
+}
+
+$(document).ready(function () {
+  registerEvents();
+  loadQuestion();
+  showBoard('#scene-start');
+});
