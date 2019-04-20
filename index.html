@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data-driven Quiz</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Merriweather">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Data-driven <span>Quiz</span></h1>
+        <p class="desc"></p>
+      </header>
+
+      <main>
+        <div id="board">
+          <div id="scene-start" class="scene">
+            <div class="icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h2>Are You Ready?</h2>
+            <p>In the following 5-min course, you will learn about how microwave ovens work. Click start to begin our wonderful journey!</p>
+            <a class="btn-continue" data-next="#scene-title-pasta"><i class="far fa-play-circle"></i>Start</a>
+          </div>
+          <div id="scene-end" class="scene">
+            <div class="icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+            <h2>Congratulation!!!</h2>
+            <p>You have completed the course. Now you can show off to your friends how a microwave oven works!</p>
+            <a class="btn-share"><i class="fab fa-twitter"></i>Share</a>
+          </div>
+
+          <div id="scene-title-practice" class="scene scene-title">
+            <div class="icon">
+              <i class="far fa-file-alt"></i>
+            </div>
+            <h2>Practice Time!!!</h2>
+            <p>Let's do some practice to see if you master how microwave ovens work!</p>
+            <a class="btn-continue" data-next="#scene-question-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-1" class="scene scene-question">
+            <h2>Question 1</h2>
+            <p>Microwaves are electric waves that could NOT penetrate?</p>
+            <div class="gallery gallery-v select" data-target="#scene-question-1">
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>A. Food</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>B. Ceramics</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-1">
+                <p>C. Glass</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-1">
+                <p>D. Metal</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next="#scene-wrong-1"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-1" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Yes, Microwaves are electromagnetic waves that could penetrate food, plastics, ceramics, glass, but will be reflected by metals.</p>
+            <a class="btn-continue" data-next="#scene-question-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-1" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>Microwaves are electromagnetic waves that could penetrate food, plastics, ceramics, glass, but will be reflected by metals.</p>
+            <a class="btn-continue" data-next="#scene-question-2"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-2" class="scene scene-question">
+            <h2>Question 2</h2>
+            <p>How does the microwave heat the food?</p>
+            <div class="gallery gallery-v select" data-target="#scene-question-2">
+              <div class="frame option" data-next="#scene-correct-2">
+                <p>A. Activating the water molecules in the food.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2">
+                <p>B. Heat the air inside the microwave oven.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2">
+                <p>C. Heat the container of the food and then conduct the heat to the food.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-2">
+                <p>D. Activating the proteins in the food.</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-2" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Yes, microwaves heat food by activating the polar molecules, majorly water molecules.</p>
+            <a class="btn-continue" data-next="#scene-question-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-2" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>Microwaves heat food by activating the polar molecules, majorly water molecules, but not all the molecules in the food.<br>The food containers are not heated.<br>It is the conventional oven that heats food by heating the air inside the microwave oven, not the microwave oven.</p>
+            <a class="btn-continue" data-next="#scene-question-3"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+
+          <div id="scene-question-3" class="scene scene-question">
+            <h2>Question 3</h2>
+            <p>In what order does the microwave heat the food?</p>
+            <div class="gallery gallery-v select" data-target="#scene-question-3">
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>A. Heat the inside first then the outside.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>B. Heat the outside first then the inside.</p>
+              </div>
+              <div class="frame option" data-next="#scene-correct-3">
+                <p>C. Heat all parts at the same time.</p>
+              </div>
+              <div class="frame option" data-next="#scene-wrong-3">
+                <p>D. Heat in a random order.</p>
+              </div>
+            </div>
+            <a class="btn-continue btn-disabled" data-next=""><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-correct-3" class="scene scene-feedback">
+            <div class="icon">
+              <i class="far fa-check-circle"></i>
+            </div>
+            <h2>Correct!</h2>
+            <p>Yes, microwaves heat all the water molecules in the food at the same time. So it heats all parts of the food at the same time.</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+          <div id="scene-wrong-3" class="scene scene-feedback">
+            <div class="icon icon-alert">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <h2>Incorrect</h2>
+            <p>There is a common misconception that microwave ovens heat food from the inside out. However, actually microwaves heat all the water molecules in the food at the same time. So it heats all parts of the food at the same time.<br>It is the conventional oven that heats food by heating the air and conduct the heat from the outside of the food to the inside, not the microwave oven.</p>
+            <a class="btn-continue" data-next="#scene-end"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p class="copyright">&copy; 2019. A Work Crafted by Yihong Shi &amp; Canhai Chen</p>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
