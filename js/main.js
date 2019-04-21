@@ -219,33 +219,92 @@ function readQuestions(data) {
 }
 
 function readOptions(data) {
+  // Read data
   var optionList = [];
+  var quizScoreList = [];
+  var avgScoreList = [];
   for (var i = 0; i < data.length; i++) {
     var o = data[i];
     var qid = o.Question_id;
     if (optionList[qid] == null) {
       optionList[qid] = [];
+      quizScoreList[qid] = 0;
+      avgScoreList[qid] = 0;
     }
-    var desc = o.Answer_text;
     var option = {
       qid: qid,
-      desc: desc,
-      keywords: analyzeKeywords(desc),
-      isCorrect: analyzeCorrectness(desc),
+      desc: o.Answer_text,
+      keywords: [], // Default, analyze later in analyzeKeywords
+      isCorrect: false, // Default, analyze later in analyzeOption
+      isUseful: false, // Default, analyze later in analyzeOption
       isUsedAsOption: false,
-      isUsedAsFeedback: false
+      isUsedAsFeedback: false,
+      score: Number(o.Student_score_on_question),
+      quizScore: Number(o.Quiz_score),
+      avgScore: Number(o.Average_quizzes_score)
     }
     optionList[qid].push(option);
+    quizScoreList[qid] += option.quizScore;
+    avgScoreList[qid] += option.avgScore;
+  }
+
+  // Calculate scores
+  for (var i = 0; i < optionList.length; i++) {
+    var optionCount = optionList[qid].length;
+    var quizScore = quizScoreList[i];
+    if (quizScore != null) {
+      quizScoreList[i] = quizScore / optionCount;
+    }
+    var avgScore = avgScoreList[i];
+    if (avgScore != null) {
+      avgScoreList[i] = avgScore / optionCount;
+    }
   }
   console.log('readOptions', optionList);
+  console.log('quizScoreList', quizScoreList);
+  console.log('avgScoreList', avgScoreList);
+
+  // Analyze keywords
+  for (var i = 0; i < optionList.length; i++) {
+    var options = optionList[i];
+    for (var op in options) {
+      op.keywords = analyzeKeywords(op.desc);
+    }
+  }
+
+  // Analyze options
+  for (var i = 0; i < optionList.length; i++) {
+    var options = optionList[i];
+    for (var op in options) {
+      analyzeOption(op, quizScoreList[i], avgScoreList[i]);
+    }
+  }
 }
 
 function analyzeKeywords(text) {
   return [];
 }
 
-function analyzeCorrectness(text) {
-  return false;
+// analyzeCorrectness(desc, o.Student_score_on_question, o.Quiz_score, o.Average_quizzes_score)
+function analyzeOption(option, quizScoreAvg, avgScoreAvg) {
+  // Check score
+  if (option.score <= 0.5) {
+    option.isCorrect = false;
+    option.isUseful = true;
+    return;
+  }
+  // Check length
+  if (option.text.length < 40) {
+    option.isCorrect = false;
+    option.isUseful = true;
+    return;
+  }
+
+  // Check correct
+  if (option.quizScore >= quizScoreAvg || option.avgScore >= avgScoreAvg) {
+    option.isCorrect = true;
+    option.isUseful = true;
+  }
 }
 
 $(document).ready(function () {
