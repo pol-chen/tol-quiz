@@ -186,7 +186,7 @@ function registerEvents() {
 
 /* CSV */
 
-function readCsv(file) {
+function readCsv(file, next) {
   $.ajax({
     type: 'GET',
     url: file,
@@ -197,10 +197,25 @@ function readCsv(file) {
           console.log(err);
         } else {
           console.log('Data', data);
+          next(data);
         }
       });
     }
   });
+}
+
+function readQuestions(data) {
+  var questionList = [];
+  for (var i = 0; i < data.length; i++) {
+    var q = data[i];
+    var question = {
+      qid: q.Question_id,
+      desc: q.Question_text,
+      options: []
+    }
+    questionList.push(question);
+  }
+  console.log('readQuestions', questionList);
 }
 
 $(document).ready(function () {
@@ -208,6 +223,6 @@ $(document).ready(function () {
   loadQuestion();
   showBoard('#scene-start');
 
-  readCsv('data/answers.csv');
-  readCsv('data/questions.csv');
+  readCsv('data/answers.csv', function(data) {});
+  readCsv('data/questions.csv', readQuestions);
 });
