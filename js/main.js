@@ -218,11 +218,41 @@ function readQuestions(data) {
   console.log('readQuestions', questionList);
 }
 
+function readOptions(data) {
+  var optionList = [];
+  for (var i = 0; i < data.length; i++) {
+    var o = data[i];
+    var qid = o.Question_id;
+    if (optionList[qid] == null) {
+      optionList[qid] = [];
+    }
+    var desc = o.Answer_text;
+    var option = {
+      qid: qid,
+      desc: desc,
+      keywords: analyzeKeywords(desc),
+      isCorrect: analyzeCorrectness(desc),
+      isUsedAsOption: false,
+      isUsedAsFeedback: false
+    }
+    optionList[qid].push(option);
+  }
+  console.log('readOptions', optionList);
+}
+
+function analyzeKeywords(text) {
+  return [];
+}
+
+function analyzeCorrectness(text) {
+  return false;
+}
+
 $(document).ready(function () {
   registerEvents();
   loadQuestion();
   showBoard('#scene-start');
 
-  readCsv('data/answers.csv', function(data) {});
+  readCsv('data/answers.csv', readOptions);
   readCsv('data/questions.csv', readQuestions);
 });
