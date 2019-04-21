@@ -1,0 +1,95 @@
+Answer_text,Question_id,Student_score_on_question,Student_choice_on_question,Quiz_score,Average_quizzes_score
+it's not deliberate practice,1,0,B,6,7.8
+"Even without deliberate practice, Rajeev could improve his skill by practice. If his skill doesn't improve at all, that is not a problem of deliberate practice, it's a problem that he didn't practice the same skill every day. He is not practicing a specific skill (draw the eye of the portrait). Although the lack of feedback is also important, it's more important to focus on the same practice)",1,0,B,8.5,8
+"The task of creating a portrait is a complex one and should be studied step by step rather than in full. Hence, Rajeev should identify what parts of the portrait are problematic and practice them regularly instead of drawing new full portrait every day.",1,0,B,8,8.1
+"lack of deliberate practice, to say, always practice a general and broad task set without pinpointing where exactly is not good.",1,0,B,6.75,6.7
+"It's not specific enough. Portraiture could be considered the whole task - there are specific techniques that Rajeev should focus on improving before practicing combining into the whole portrait. (Compare to practicing a putt in golf, not all of golf)",1,1,A,6,6.8
+"People generally can't improve to a higher level without some figure telling them what that higher level is/looks like. For all we know, Rajeev is drawing stick figures and thinks them pretty good. He needs someone/something to evaluate him and tell him what parts of his portrait need improving on so that he can practice those particular aspects.",1,1,A,6.75,7.2
+"First, the instruction of practice might not be the best; Second, he didn't have a teacher monitor his practice; Last, he didn't have informative feedback and remedial training.",1,1,A,7,7.6
+"Despite doing so much practice, there is no one to give Rajeev feedback on his errors and remedial training based on that feedback. So while Rajeev is practicing a lot, he is not doing deliberate practice which focuses on correcting his errors and then improving his skill.",1,1,A,7,6.4
+Rajeev needs expert feedback in order to identify his mistakes and how to correct them.,1,1,A,8,7.5
+"Rajeev is getting a lot of practice, but he should ask an art instructor each day for feedback on how well he drew the day’s portrait",1,1,A,8,6.8
+"Currently, Rajeev is not receiving feedback and remedial instruction for his work which are an integral part of deliberate practice.",1,1,A,8.75,8.2
+"He is not doing deliberate practice. That is, his practice might not be focused on the part that needs improvement, there is no feedback on his performance from experts.",1,1,A,8,7.3
+Because he doesn't have a mentor who diagnoses his problems about painting. He doesn't get immediate feedback and remedial training.,1,1,A,8.75,7.7
+He doesn't have a teacher who supervises him and diagnoses his errors.,1,1,A,6,7
+"Rajiv may not know the optimal techniques for drawing because of a lack of explicit instruction, he has no supervision in terms of mistakes that he's making and he gets no feedback or remedial training for the components he's weak at.",1,1,A,8,7.1
+"Rajeev is not improving because he is not undergoing deliberate practice. He is drawing alone, which means that one of the conditions of deliberate practice is not being met: he is not being supervised by a teacher to diagnose errors.",1,1,A,8,8.1
+It might be that there's no informative feedback and remedial training for him to correct his errors and to improve his skill.,1,1,A,6,7.3
+"Because he is neither given explicit instruction about the best method, nor supervised by a teacher to diagnose errors and get informative feedback and remedial training. Repeated practice at the same level won't lead to performance.",1,1,A,7.75,6.8
+He is not doing deliberate practice. B/c there is no feedback provided.,1,1,A,10,8.3
+"To improve quickly, Rajeev needs deliberate practice, which requires feedbacks.",1,1,A,6.75,7
+There's no supervision of an external agent so no feedback,1,1,A,7,7.6
+Reason could be because he didn't get corrective feedback.,1,1,A,9.75,7.7
+because he needs to be supervised by a teacher to diagnose errors,1,1,A,6.75,6.9
+Not receiving immediate feedback may make Rajeev not yield an improvement.,1,1,A,4.75,6.7
+"Yes, he has isolated a specific task, practices it repeatedly and reviews his sessions to narrow on improvements.",2,0,"A, D",6,6.8
+"No, because deliberate practice requires that an external agent provide feedback to the learner.",2,0.5,"C, D",8.5,8
+"Not exactly. To engage in deliberate practice, one must be given explicit instruction about the best method. Since Dan is simply reflecting on his own method and has never compared it with a best method given to him by an expert, this step is not met. You could perhaps argue that the second component of deliberate practice is met, he is his own teacher and diagnosis his own errors. But without the first point, this is meaningless. Finally, the third part of deliberate practice of getting informative feedback and remedial training could be argued that he's doing this for himself. But again, without being able to compare it with a best method, this is meaningless.",2,0.75,B,6.75,7.2
+"No. Deliberate practice requires feedback from an external expert, be that a human expert or an agent. Also, he is not making adjustments frequent enough",2,0.75,B,8.75,8.2
+no.there's no external resource to provide feedback to him,2,0.75,B,8.75,7.7
+"because he is not getting task feedback from an external agent, and he is not able to practice corrections immediately.",2,0.75,B,7.75,6.8
+"No, since he receives no feedback on how well he does. Also, the feedback was not immediate.",2,0.75,B,6.75,7
+"no, because he needs an instructor to provide informative feedback",2,0.75,B,9.75,7.7
+"No, for he is not supervised and has no instruction from experts.",2,0.75,B,6.75,6.9
+"No, because there is not an external agent providing instructive and immediate feedback in Dan's practice",2,0.75,B,6.75,6.7
+Not receiving immediate feedback may make Rajeev not yield an improvement.,2,0.75,B,4.75,6.7
+No. He is not supervised by himself to diagnose errors and does not get informative and timely feedback and remedial training.,2,1,"B, C",7,7.6
+Dan is not engaged in deliberate practice because of the following reasons : 1. There is no external agent giving him feedback on what he is doing wrong and how to correct it. (corrective feedback). Some of the errors might not be visible to Dan and so it is important to get that feedback from an external agent like a teacher. 2. Remedial training is effective if it is taken immediately and not after some time of getting immediate feedback from an external agent.,2,1,"B, C",7,6.4
+Dan is not engaged in deliberate practice because he is missing expert feedback. He may be unable to precisely diagnose his mistakes and/or to formulate an optimal plan to address them without supervision. Additionally waiting until the next day to address problems undermines his ability to relate errors to corrections and further removes his routine from deliberate practice.,2,1,"B, C",8,7.5
+"Dan is not receiving feedback from an external agent as such he may miss errors that he made that someone else might catch. He is also not receiving immediate feedback and both of these things are necessary for deliberate practice. In the options below, I have not selected ""No, because he is not able to practice corrections immediately"" as receiving immediate feedback is not the same as being able to practice corrections on that feedback immediately.",2,1,"B, C",8,6.8
+"No, because he doesn't have an external mentor to guide the practice.",2,1,"B, C",8,7.3
+"No because, he is lacking (1) explicit instructions about the best method (2) supervised by a teacher to diagnose erorrs because he s diagnosing them himself and (3) immediate feedback as he watched the videos at the end of the day and gives himself feedback",2,1,"B, C",6,7.8
+"Dan in this case is not able to practice his corrections at the time the errror is spotted. This is not ideal as golf is not a sport that strains the body heavily and thus, it is not the case unlike powerlifting or bodybuilding where the instance for deliberate practice has a limitation on the amount of activity. Additionally, Dan does not get feedback from an expert instructor. Therefore he may see far fewer errors than an instructor does.",2,1,"B, C",6,7
+"No, Dan is not engaged in deliberate practice because he is nothing supervised by a teacher to diagnose errors. This is an element of the definition of deliberate practice.",2,1,"B, C",8,7.1
+"It is. Because it includes practice on a specific skill, supervised by himself, get feedback from himself, and remedial training the next day.",2,1,"B, C",8,8.1
+"No, he needs external agent to give informative feedback, as he may be ""unskilled and unaware of it"". Also he needs to receive informative feedback and practise again in a loop which he can not do in the described way.",2,1,"B, C",6,7.3
+I don't think so. Because he does not have the expertise to give himself corrective feedback.,2,1,"B, C",8,8.1
+The feedback needs to be given by an external agent,2,1,"B, C",10,8.3
+He did not get external feedback on tasks performance.,2,1,"B, C",7,7.6
+"Remind him of long term goals, and the growth that is still possible and how his current achievement reflects that. Basically tell him how great he's done and tell him he's going to continue to better in the future.",3,0.5,"A, B",6,7
+"Great work, you see, your practice did pay off.",3,0.75,B,6,7.2
+"One of the most important things about growth mindset is giving feedback on the task that Mark is doing and not on his own personality of him being a talented musician. One growth mindset instruction his instructor could give him is ""Great work in your performance today. Keep up with your perseverance.""",3,0.75,"A, C, D",6,6.4
+"Great job. Keep working and putting effort, you will improve more quickly.",3,0.75,B,7,6.8
+Way to go! You have achieved your goal after diligent practice. Keep up the perseverance and you will learn a lot more in the future!,3,0.75,"B, C, D",7,7.3
+You did a great job putting efforts into practice and it paid off!,3,0.75,B,9,7.7
+"When I learned to play, I practiced as hard as you just did, and now I become a guitarist. You'll get there too if you keep practicing hard.",3,0.75,B,7,7.3
+"Citing the recommended paper, ""Growth-mind-set interventions convey that intelligence can grow when students work hard on challenging tasks—and thus that struggle is an opportunity for growth, not a sign that a student is incapable of learning."" Given that, option C seems correct as it shows that through struggling, Mark managed to improve his ability to keep the right rhythm.",3,0.75,D,7,8.1
+Amazing job! Great persistent on your learning.,3,0.75,"B, C",7,8.3
+You have improved a lot!,3,0.75,"B, C",8,7.7
+What a great job that you achieved the goal of playing your favorite song. It is also great for your persistence of learning and practicing.,3,0.75,"B, C",7,6.7
+"Excellent persistence, keep up the motivation!",3,1,"B, D",8,6.8
+Good job! You could learn songs by practice. Keep on that!,3,1,"B, D",8,7.6
+"Great effort! You persisted even when it was frustrating, and now you can play your favorite song! If you stay determined like that, you can learn to play anything!",3,1,"B, D",7,7.5
+"As Mark has practiced fo long hours, he has probably overcome many difficulties while learning his favorite song. The instructor should point out these difficulties and how Mark overcame them as constructive feedback which can help build the growth-mindset by highlighting that he has already grown from his initial stage.",3,1,"B, D",8,8.2
+Good job on practicing the right skill!,3,1,"B, D",9,7.8
+You did an excellent job maintaining the right rhythm throughout this song. You've grown tremendously in your skills over the past few days.,3,1,"B, D",8,7.1
+Your persistence in practicing chord changes resulted in you altering this song.,3,1,"B, D",8,8.1
+"Great, you are doing well on this song because of your hard practice. You could do better on other songs and more complex skills if you continue to practice like this.",3,1,"B, D",9,8
+"Congrats Mark! As long as you work hard, you could manage whatever you want! See how much progress you've made!",3,1,"B, D",8,6.8
+Good job! Now try this beautiful song song (which is harder).,3,1,"B, D",6,7
+Your hard work has paid off! Keep up with the great work!,3,1,"B, D",9,7.6
+Practice makes perfect!,3,1,"B, D",7,6.9
+"you made a great progress and that is due to your efforts, due to what you did rather than who you are.",3,1,"B, D",8,6.7
+"No, this was stated in the lecture that Jigsaw is a black box in terms of showing the theory of intelligence",4,1,C,8.25,7.2
+"No, jigsaw doesn't help build a theory of intelligence.",4,1,C,8,7.6
+"It doesn't show the students that they can grow their skill set by working on them, by practicing them.",4,1,C,6.75,6.4
+"Probably not (though it's not impossible). Jigsaw is mostly focused around empathy and interpersonal skills. It does not explicitly teach learners how brains and learning works, which is usually needed to convert students to growth mindsets. Rather, it teaches students that they can work with many different kinds of people, and achieve more than they previously thought (though it doesn't teach them why they can do these things)",4,1,C,7.75,7.5
+"Not really, jigsaw does not help students understand the brain or intelligence which is a prerequisite for a growth mindset.",4,1,C,9.5,8.2
+"No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence",4,1,C,8.5,7.3
+"I think so. Because Jigsaw demonstrates to students that they can always learn from other people. What's more, it shows that they can not only learn themselves, but also help other people to improve together.",4,0,A,7.25,7.7
+No,4,1,C,8.75,7.8
+"Yes, because it gives them the confidence that they can master a concept enough to teach others and help others do well when tested on that concept.",4,0,A,8,7
+"Since the Jigsaw method does not reveal the details of how it is effective, we cannot assess if it actually creates a growth-intelligence mindset as it could also be attributed to a talent in that given domain that was not previously exposed. It could create a growth-intelligence mindset, but it's not a guarantee. Hence, my answer is no.",4,1,C,7.75,7.1
+Yes indeed! The jigsaw method creates a growth mindset because through the process students are going through walks them through a process in which their own competence is demonstrated back to them and they are supported by the other students on their team. This translates to them feeling their own ability to succeed and increase their intelligence in the future.,4,0,A,7.5,8.1
+"Yes, students are encouraged to learn , express, they are seeing others rely on themselves and see themselves improve.",4,0,B,8,8
+"No, because usually, students don't realize why it works",4,1,C,7.75,7.3
+"I would say no, because growth mindset is an idea that through struggling one can do better and Jigsaw does not really do this. Moreover, students usually misunderstand even why jigsaw works.",4,1,C,8.75,8.1
+"I think it does. Especially for those low-achieving students, Jigsaw enables them to learn from other members (in the expert group as well as Jigsaw group), knowing that they could also learn as well as their peers. Also, as Jigsaw team will rely on one another to learn that part of knowledge, each person will feel that they are making contributions.",4,0,A,7,6.8
+"No, because it doesn’t implicate how the brain works, and the malleable nature of intelligence. Jigsaw doesn't help students or teachers discover why it works, It doesn't help intelligence either.",4,1,C,9.75,8.3
+"Yes, because the Jigsaw methods let even the low-achieving students become expert and help other students. These students will feel they could also achieve better score if they work hard.",4,0,A,6,7
+"No, it does not help with the intelligence theory.",4,1,C,8,7.6
+"Yes, for example carlos, have developed a growth-mindset, while he thought he was stupid he later think he is smart.",4,0,A,6.5,7.7
+"According to the reading, Carlos changed his mindset because his groupmates think he was someone they could work with and someone they could appreciate.",4,0,B,7.75,6.9
+"No. Though it teaches the konwlegde in a better way, it does not share any knowledge about mindsets, nor the malleable nature of intelligence.",4,1,C,8,6.7
+"Jigsaw is about collaborative learning and empathy, but not actually about growth mindset.",4,1,C,10,6.7
