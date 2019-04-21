@@ -184,8 +184,30 @@ function registerEvents() {
   })
 }
 
+/* CSV */
+
+function readCsv(file) {
+  $.ajax({
+    type: 'GET',
+    url: file,
+    dataType: 'text',
+    success: function(csv) {
+      $.csv.toObjects(csv, {}, function(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log('Data', data);
+        }
+      });
+    }
+  });
+}
+
 $(document).ready(function () {
   registerEvents();
   loadQuestion();
   showBoard('#scene-start');
+
+  readCsv('data/answers.csv');
+  readCsv('data/questions.csv');
 });
