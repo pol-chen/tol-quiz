@@ -4,7 +4,7 @@ const fs = require('fs');
 const keyword = require('./keyword');
 
 let questionList = [];
-let optionList = [];
+let optionList = {};
 
 const readCsv = async (path, next) => {
   await csvToJson()
@@ -38,9 +38,9 @@ const parseQuestions = (data) => {
 
 const parseOptions = (data) => {
   // Read data
-  var difficultyList = [];
-  var quizScoreList = [];
-  var avgScoreList = [];
+  var difficultyList = {};
+  var quizScoreList = {};
+  var avgScoreList = {};
   for (var i = 0; i < data.length; i++) {
     var o = data[i];
     var qid = o.Question_id;
@@ -70,8 +70,8 @@ const parseOptions = (data) => {
   }
 
   // Calculate difficulty, quiz and avg scores
-  for (var i = 1; i < optionList.length; i++) {
-    var optionCount = optionList[i].length;
+  for (let [i, options] of Object.entries(optionList)) {
+    var optionCount = options.length;
 
     var score = difficultyList[i];
     difficultyList[i] = score / optionCount;
@@ -84,8 +84,7 @@ const parseOptions = (data) => {
   }
 
   // Analyze options
-  for (var i = 1; i < optionList.length; i++) {
-    var options = optionList[i];
+  for (let [i, options] of Object.entries(optionList)) {
     for (var j = 0; j < options.length; j++) {
       var op = options[j];
       analyzeOption(op, quizScoreList[i], avgScoreList[i]);
