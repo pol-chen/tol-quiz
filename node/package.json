@@ -1,0 +1,15 @@
+{
+  "name": "tol-quiz-analyze",
+  "version": "1.0.0",
+  "description": "Analyze part for TOL Quiz project.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "keyword-extractor": "0.0.16",
+    "synonyms": "^1.0.1"
+  }
+}
