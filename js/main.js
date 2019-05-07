@@ -47,7 +47,7 @@ function pickOptions(qid) {
   // Pick incorrect options as 1, 2, 3
   var count = 0;
   for (var option of optionList[qid].incorrect) {
-    if (!option.isUsedAsOption && !option.isUsedAsFeedback) {
+    if (!option.isUsedAsOption) {
       option.isUsedAsOption = true;
       options[++count] = option;
       if (count === 3) break;
