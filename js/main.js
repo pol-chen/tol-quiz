@@ -18,7 +18,7 @@ function readJson(path, next) {
 
 /* Quiz */
 
-var current = 0;
+var currentIndex = 0;
 
 function pickFeedback(qid) {
   var feedback = '';
@@ -64,13 +64,13 @@ function pickOptions(qid) {
 }
 
 function loadQuestion() {
-  console.log('LOAD Q' + (current + 1));
+  console.log('LOAD Q' + (currentIndex + 1));
   var quiz = questionList;
-  var q = quiz[current++];
+  var q = quiz[currentIndex++];
   q.options = pickOptions(q.qid);
   q.feedback = pickFeedback(q.qid);
   // console.log(quiz);
-  $('#scene-question h2').text('Question ' + current);
+  $('#scene-question h2').text('Question ' + currentIndex);
   $('#scene-question p').text(q.text);
   $('#scene-question .btn-continue').addClass('btn-disabled');
   $('#scene-question .select').empty();
@@ -94,6 +94,34 @@ function buildOption(op, i) {
   </div>';
 }
 
+/* Score */
+
+var correctCount = 0;
+var remainCount = 2;
+
+function calculateScore(el) {
+  if (el.includes('scene-correct')) {
+    correctCount++;
+  }
+}
+
+function displayResult() {
+  $('.count-correct').text(correctCount);
+  $('.count-total').text(questionList.length);
+  $('.count-remain').text(remainCount);
+
+  if (remainCount <= 0) {
+    $('.btn-retake').addClass('btn-disabled');
+  }
+}
+
+function retake() {
+  correctCount = 0;
+  currentIndex = 0;
+  showScene('#scene-question', loadQuestion);
+  remainCount--;
+}
+
 /* Scene */
 
 function hideBoard() {
@@ -110,6 +138,7 @@ function continueScene(el) {
   var next = $(el).data('next');
   console.log(next);
   $(el).parent('.scene').fadeOut(function () {
+    calculateScore(next);
     $(next).fadeIn();
   });
 }
@@ -135,13 +164,19 @@ function showScene(target, prep) {
 /* Event */
 
 function registerEvents() {
+  $('.btn-retake').click(function () {
+    if (!$(this).hasClass('btn-disabled')) {
+      retake();
+    }
+  })
   $('.btn-continue').click(function () {
     if (!$(this).hasClass('btn-disabled')) {
       continueScene(this);
     }
   })
   $('.btn-next-question').click(function () {
-    if (current == questionList.length) {
+    if (currentIndex == questionList.length) {
+      displayResult();
       showScene('#scene-end');
     } else {
       showScene('#scene-question', loadQuestion);

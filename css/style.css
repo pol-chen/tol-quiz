@@ -154,7 +154,7 @@ main {
 
 .scene h2 {
   width: 540px;
-  margin-bottom: 24px;
+  margin-bottom: 36px;
   font-family: 'Pacifico', sans-serif;
   font-size: 36px;
   color: #565656;
@@ -245,6 +245,15 @@ main {
   border: 3px solid #7AC9C5;
   border-radius: 8px;
   outline: 0;
+}
+
+.scene .action a {
+  display: inline-block;
+}
+
+.number {
+  font-weight: bold;
+  color: #7AC9C5;
 }
 
 footer {
