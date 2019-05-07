@@ -139,9 +139,32 @@ const exportToJson = (data, path) => {
   });
 };
 
+const sortOptions = () => {
+  for (let [i, options] of Object.entries(optionList)) {
+    optionList[i] = {
+      correct: [],
+      incorrect: []
+    };
+    options = options.sort((a, b) => {
+      return b.irtCorrectness - a.irtCorrectness || b.keywordMatchness - a.keywordMatchness;
+    });
+    for (const option of options) {
+      // console.log(option.irtCorrectness, option.keywordMatchness, option.isUseful, option.isCorrect);
+      if (option.isUseful) {
+        if (option.isCorrect) {
+          optionList[i].correct.push(option);
+        } else {
+          optionList[i].incorrect.push(option);
+        }
+      }
+    }
+  }
+};
+
 const runAnalysis = async () => {
   await readCsv('../data/questions.csv', parseQuestions);
   await readCsv('../data/answers.csv', parseOptions);
+  sortOptions();
   exportToJson(JSON.stringify(questionList), '../data/questions.json');
   exportToJson(JSON.stringify(optionList), '../data/options.json');
 };
