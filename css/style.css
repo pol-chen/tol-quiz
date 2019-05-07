@@ -50,10 +50,10 @@ table {
 /*CUSTOM CODE*/
 
 html {
-  font-family: Helvetica, Arial, sans-serif;
-  background: #FFFBF0;
+  background: #FAF6EE;
   color: #262626;
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 .wrapper {
@@ -62,17 +62,18 @@ html {
 }
 
 header {
-  margin-top: 72px;
+  margin-top: 48px;
+  text-align: center;
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Pacifico', sans-serif;
   font-size: 36px;
-  color: #000000;
+  color: #565656;
 }
 
 h1 span {
-  color: #26A69A;
+  color: #7AC9C5;
 }
 
 p.desc {
@@ -84,7 +85,7 @@ p.desc {
 main {
   position: relative;
   width: 100%;
-  height: 640px;
+  height: 800px;
   margin: 24px 0;
   border-radius: 8px;
   overflow: hidden;
@@ -94,7 +95,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #FAEFD0;
+  background: #F6F2E6;
   opacity: 1;
 }
 
@@ -113,7 +114,7 @@ main {
   width: auto;
   padding: 12px 18px;
   display: inline-block;
-  background: #26A69A;
+  background: #7AC9C5;
   color: #FFFFFF;
   font-size: 20px;
   text-align: center;
@@ -122,7 +123,7 @@ main {
   transition: .3s all ease-in-out;
 }
 .scene a:hover {
-  background: #117B71;
+  background: #59B6B1;
 }
 .scene a.btn-hidden {
   display: none;
@@ -143,25 +144,25 @@ main {
 
 .scene .icon i {
   height: 120px;
-  color: #26A69A;
+  color: #7AC9C5;
   font-size: 120px;
 }
 
 .scene .icon-alert i {
-  color: #A63E26;
+  color: #F55760;
 }
 
 .scene h2 {
   width: 540px;
   margin-bottom: 24px;
-  font-family: 'Lobster', cursive;
+  font-family: 'Pacifico', sans-serif;
   font-size: 36px;
-  color: #000000;
+  color: #565656;
   text-align: center;
 }
 
 .scene p {
-  width: 540px;
+  width: 640px;
   margin: 0 auto 24px;
   font-size: 16px;
   line-height: 28px;
@@ -188,7 +189,7 @@ main {
   width: 80%;
   height: 100%;
   margin: 0 12px;
-  /* border: 3px solid #26A69A; */
+  /* border: 3px solid #7AC9C5; */
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -199,13 +200,13 @@ main {
 
 .scene .gallery .option {
   display: flex;
-  border: 3px solid #FFFBF0;
-  background: #FFFBF0;
+  border: 3px solid #FAF6EE;
+  background: #FAF6EE;
   cursor: pointer;
 }
 
 .scene .gallery .option-selected {
-  border: 3px solid #26A69A;
+  border: 3px solid #7AC9C5;
 }
 
 .scene .gallery .option p {
@@ -217,7 +218,7 @@ main {
 }
 
 .scene .gallery .option p span {
-  color: #26A69A;
+  color: #7AC9C5;
 }
 
 .scene .gallery-v {
@@ -228,7 +229,7 @@ main {
 }
 
 .scene .gallery-v .frame {
-  width: 80%;
+  width: 100%;
   margin: 3px 0;
 }
 
@@ -238,10 +239,10 @@ main {
   padding: 12px;
   background: #FFFFFF;
   color: #262626;
-  font-family: 'Merriweather', serif;
+  font-family: 'Open Sans', serif;
   font-size: 16px;
   line-height: 28px;
-  border: 3px solid #26A69A;
+  border: 3px solid #7AC9C5;
   border-radius: 8px;
   outline: 0;
 }
@@ -250,4 +251,5 @@ footer {
   margin: 24px 0;
   font-size: 12px;
   color: #888888;
+  text-align: center;
 }
