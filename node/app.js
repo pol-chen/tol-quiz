@@ -1,5 +1,6 @@
 
 const csvToJson = require('csvtojson');
+const fs = require('fs');
 const keyword = require('./keyword');
 
 let questionList = [];
@@ -132,9 +133,18 @@ const calculateKeywordMatchness = (option) => {
   option.keywordMatchness = keyword.calculateMatch(correctAnswer, option.text);
 };
 
+const exportToJson = (data, path) => {
+  fs.writeFile(path, data, 'utf8', (err) => {
+    if (err) throw err;
+    console.log('Finished exporting json to', path);
+  });
+};
+
 const runAnalysis = async () => {
   await readCsv('../data/questions.csv', parseQuestions);
   await readCsv('../data/answers.csv', parseOptions);
+  exportToJson(JSON.stringify(questionList), '../data/questions.json');
+  exportToJson(JSON.stringify(optionList), '../data/options.json');
 };
 
 runAnalysis();
