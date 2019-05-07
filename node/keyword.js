@@ -7,7 +7,7 @@ const extractOptions = {
   remove_digits: true,
   return_changed_case: true,
   remove_duplicates: false
-}
+};
 
 const calculateMatch = (correctAnswer, studentAnswer) => {
   const correctKeywords = keywordExtractor.extract(correctAnswer, extractOptions);
@@ -39,9 +39,9 @@ const calculateMatch = (correctAnswer, studentAnswer) => {
       }
     }
   }
-  console.log('MATCH', matchCount, '/', correctKeywords.length);
+  // console.log('MATCH', matchCount, '/', correctKeywords.length);
   return matchCount / correctKeywords.length;
-}
+};
 
 module.exports = {
   calculateMatch: calculateMatch
