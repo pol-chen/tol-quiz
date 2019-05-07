@@ -1,80 +1,32 @@
 
+/* Data */
+
+var questionList = [];
+var optionList = [];
+
+function readJson(path, next) {
+  $.ajax({
+    type: 'GET',
+    url: path,
+    dataType: 'json',
+    success: function(data) {
+      console.log(data);
+      next(data);
+    }
+  });
+}
+
 /* Quiz */
 
-var questions = [{
-    text: 'When light from an object reaches our eyes, which part(s) of the eye refracts the light?',
-    image: '',
-    options: [
-      {
-        text: 'Cornea and Lens',
-        correct: true,
-        feedback: 'Correct! When light from an object reaches our eyes, the cornea and lens refracts the light.'
-      },
-      {
-        text: 'Retina',
-        correct: false,
-        feedback: 'Ooops! Retina does not refract light, it is where light gets focused in a person who has perfect vision.'
-      },
-      {
-        text: 'Glass',
-        correct: false,
-        feedback: 'Ooops! Light enters the eye through the pupil, but pupil does not refracts light.'
-      }
-    ]
-  }, {
-    text: 'In order to have perfect vision, where does light need to be focused in the eye?',
-    image: '',
-    options: [
-      {
-        text: 'In between lens and retina',
-        correct: false,
-        feedback: 'Ooops! When light gets focused before the retina, the person will have a blurry vision.'
-      },
-      {
-        text: 'Cornea and Lens',
-        correct: false,
-        feedback: 'Ooops! Cornea and lens are where light gets refracted, not where light gets focused in order to have perfect vision.'
-      },
-      {
-        text: 'Retina',
-        correct: true,
-        feedback: 'Good job! In a person who has perfect vision, the refracted light is actually focused on the retina.'
-      }
-    ]
-  }, {
-    text: 'When light gets focused before the retina, what will it cause?',
-    image: '',
-    options: [
-      {
-        text: 'Hyperopia and hypermetropia',
-        correct: false,
-        feedback: 'Ooops! When light gets focused before the retina, the person will have a blurry vision.'
-      },
-      {
-        text: 'Myopia',
-        correct: true,
-        feedback: 'Good job! Myopia is also called nearsightedness, which causes blurry vision when looking at distant objects.'
-      },
-      {
-        text: 'Farsightedness',
-        correct: false,
-        feedback: 'Ooops! Farsightedness is also called hyperopia or hypermetropia, which is the defect when light gets focused behind the retina.'
-      }
-    ]
-  }];
-
 var current = 0;
-var quiz = questions;
 
 function loadQuestion() {
   console.log('LOAD Q' + (current + 1));
-
+  var quiz = questionList;
   var p = quiz[current++];
+  console.log(quiz);
   $('#scene-question h2').text('Question ' + current);
   $('#scene-question p').text(p.text);
-  if (p.image.length > 0) {
-    $('#scene-question p').append('<img src="images/' + p.image + '" alt="">');
-  }
   $('#scene-question .btn-continue').addClass('btn-disabled');
   $('#scene-question .select').empty();
   p.options.forEach(function(option, i) {
@@ -187,6 +139,13 @@ function registerEvents() {
 
 $(document).ready(function () {
   registerEvents();
-  loadQuestion();
   showBoard('#scene-start');
+
+  readJson('data/questions.json', function(questions) {
+    questionList = questions;
+    readJson('data/options.json', function(options) {
+      optionList = options;
+      loadQuestion();
+    });
+  });
 });
