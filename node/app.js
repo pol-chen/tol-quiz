@@ -158,6 +158,7 @@ const sortOptions = () => {
         }
       }
     }
+    // Reverse incorrect options
     optionList[i].incorrect.reverse();
   }
 };
