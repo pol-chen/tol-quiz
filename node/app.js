@@ -146,7 +146,7 @@ const sortOptions = () => {
       incorrect: []
     };
     options = options.sort((a, b) => {
-      return b.irtCorrectness - a.irtCorrectness || b.keywordMatchness - a.keywordMatchness;
+      return b.keywordMatchness - a.keywordMatchness || b.irtCorrectness - a.irtCorrectness;
     });
     for (const option of options) {
       // console.log(option.irtCorrectness, option.keywordMatchness, option.isUseful, option.isCorrect);
@@ -158,6 +158,7 @@ const sortOptions = () => {
         }
       }
     }
+    optionList[i].incorrect.reverse();
   }
 };
 
