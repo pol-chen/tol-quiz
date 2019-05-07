@@ -184,7 +184,7 @@ function registerEvents() {
   })
   $('.btn-share').click(function () {
     var url = "https://polarischen.github.io/tol-quiz/";
-    var text = "Do you take a data-driven quiz? Check this out! 😏";
+    var text = "Have you taken a data-driven quiz? Check this out! 😏";
     var twitterWindow = window.open('https://twitter.com/share?url=' + url + '&text=' + text, 'twitter-popup', 'height=350, width=600');
     if (twitterWindow.focus) {
       twitterWindow.focus();
