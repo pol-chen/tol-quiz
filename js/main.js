@@ -34,23 +34,32 @@ function pickFeedback(qid) {
 
 function pickOptions(qid) {
   var options = [];
-  
-  // Pick correct option as 0
-  for (var option of optionList[qid].correct) {
-    if (!option.isUsedAsOption && !option.isUsedAsFeedback) {
-      option.isUsedAsOption = true;
-      options[0] = option;
-      break;
+  var incorrectOptions = optionList[qid].incorrect;
+  var correctOptions = optionList[qid].correct;
+
+  var totalCount = 4;
+  var incorrectCount = Math.floor(Math.random() * totalCount);
+  incorrectCount = Math.min(incorrectCount, incorrectOptions.length);
+  console.log('incorrectCount', incorrectCount);
+  var count = 0;
+
+  // Pick incorrect options
+  if (incorrectCount > 0) {
+    for (var option of incorrectOptions) {
+      if (!option.isUsedAsOption) {
+        option.isUsedAsOption = true;
+        options[count++] = option;
+        if (count === incorrectCount) break;
+      }
     }
   }
-
-  // Pick incorrect options as 1, 2, 3
-  var count = 0;
-  for (var option of optionList[qid].incorrect) {
-    if (!option.isUsedAsOption) {
+  
+  // Pick correct option as 0
+  for (var option of correctOptions) {
+    if (!option.isUsedAsOption && !option.isUsedAsFeedback) {
       option.isUsedAsOption = true;
-      options[++count] = option;
-      if (count === 3) break;
+      options[count++] = option;
+      if (count === totalCount) break;
     }
   }
 
