@@ -94,9 +94,10 @@ main {
 #board {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 800px;
   background: #F6F2E6;
   opacity: 1;
+  overflow: scroll;
 }
 
 .scene {
