@@ -39,21 +39,21 @@
           <div id="scene-question" class="scene scene-question">
             <h2>Question 1</h2>
             <p>Microwaves are electric waves that could NOT penetrate?<img src="images/question-1.png" alt=""></p>
-            <div class="gallery gallery-v select" data-target="#scene-question">
-              <div class="frame option" data-next="#scene-wrong">
+            <div class="gallery gallery-v select">
+              <div class="frame option" data-correct="1">
                 <p>A. Food</p>
               </div>
-              <div class="frame option" data-next="#scene-wrong">
+              <div class="frame option" data-correct="1">
                 <p>B. Ceramics</p>
               </div>
-              <div class="frame option" data-next="#scene-wrong">
+              <div class="frame option" data-correct="1">
                 <p>C. Glass</p>
               </div>
-              <div class="frame option" data-next="#scene-correct">
+              <div class="frame option" data-correct="0">
                 <p>D. Metal</p>
               </div>
             </div>
-            <a class="btn-continue btn-disabled" data-next="#scene-wrong"><i class="fas fa-arrow-circle-right"></i>Continue</a>
+            <a class="btn-select-option btn-disabled"><i class="fas fa-arrow-circle-right"></i>Continue</a>
           </div>
           <div id="scene-correct" class="scene scene-feedback">
             <div class="icon">
@@ -80,7 +80,6 @@
     </div>
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="js/jquery.csv.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

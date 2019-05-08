@@ -86,10 +86,10 @@ function loadQuestion() {
 }
 
 function buildOption(op, i) {
-  var feedback = op.isCorrect ? 'correct' : 'wrong';
+  var correct = op.isCorrect ? '1' : '0';
   var nums = ['A', 'B', 'C', 'D'];
   var num = nums[i];
-  return '<div class="frame option" data-next="#scene-' + feedback + '">\
+  return '<div class="frame option" data-correct="' + correct + '">\
     <p>' + num + '. ' + op.text + '</p>\
   </div>';
 }
@@ -98,12 +98,6 @@ function buildOption(op, i) {
 
 var correctCount = 0;
 var remainCount = 2;
-
-function calculateScore(el) {
-  if (el.includes('scene-correct')) {
-    correctCount++;
-  }
-}
 
 function displayResult() {
   $('.count-correct').text(correctCount);
@@ -138,7 +132,6 @@ function continueScene(el) {
   var next = $(el).data('next');
   console.log(next);
   $(el).parent('.scene').fadeOut(function () {
-    calculateScore(next);
     $(next).fadeIn();
   });
 }
@@ -174,6 +167,28 @@ function registerEvents() {
       continueScene(this);
     }
   })
+  $('.btn-select-option').click(function () {
+    if (!$(this).hasClass('btn-disabled')) {
+      var $options = $(this).parent('.scene').find('.option');
+      var correct = true;
+      for (var i = 0; i < $options.length; i++) {
+        var $op = $options.eq(i);
+        var opCorrect = $op.data('correct') == 1;
+        var opSelected = $op.hasClass('option-selected');
+        if (opCorrect != opSelected) {
+          correct = false;
+          break;
+        }
+      }
+      console.log('Answer', correct);
+      if (correct) {
+        correctCount++;
+        showScene('#scene-correct');
+      } else {
+        showScene('#scene-wrong');
+      }
+    }
+  })
   $('.btn-next-question').click(function () {
     if (currentIndex == questionList.length) {
       displayResult();
@@ -193,11 +208,14 @@ function registerEvents() {
   $('.select').on('click', '.option', function () {
     var $select = $(this).parent('.select');
     if (!$select.hasClass('select-disabled')) {
-      $select.find('.option').removeClass('option-selected');
-      $(this).addClass('option-selected');
+      $(this).toggleClass('option-selected');
 
       var $btn = $select.parent('.scene').children('a');
-      $btn.removeClass('btn-disabled');
+      if ($select.find('.option-selected').length > 0) {
+        $btn.removeClass('btn-disabled');
+      } else {
+        $btn.addClass('btn-disabled');
+      }
 
       var next = $(this).data('next');
       if (next) {
@@ -207,7 +225,7 @@ function registerEvents() {
       }
     }
   })
-  $('.input-answer').on('change keyup paste', function() {
+  $('.input-answer').on('change keyup paste', function () {
     var $btn = $(this).parent('.scene').find('.btn-continue');
     if ($(this).val().length === 0) {
       $btn.addClass('btn-disabled');
