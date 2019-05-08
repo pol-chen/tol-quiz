@@ -34,33 +34,36 @@ function pickFeedback(qid) {
 
 function pickOptions(qid) {
   var options = [];
-  var incorrectOptions = optionList[qid].incorrect;
-  var correctOptions = optionList[qid].correct;
+  var incorrectOptions = optionList[qid].incorrect.filter(function (x) {
+    return !x.isUsedAsOption;
+  });
+  var correctOptions = optionList[qid].correct.filter(function (x) {
+    return !x.isUsedAsOption && !x.isUsedAsFeedback;
+  });
+
+  console.log('io', incorrectOptions.length);
+  console.log('co', correctOptions.length);
 
   var totalCount = 4;
-  var incorrectCount = Math.floor(Math.random() * totalCount);
-  incorrectCount = Math.min(incorrectCount, incorrectOptions.length);
-  console.log('incorrectCount', incorrectCount);
-  var count = 0;
+  var incorrectCount = 0;
+  do {
+    incorrectCount = Math.floor(Math.random() * Math.min(totalCount, incorrectOptions.length));
+    console.log('ic', incorrectCount);
+    console.log('cc', totalCount-incorrectCount);
+  } while (incorrectCount + correctOptions.length < totalCount);
 
   // Pick incorrect options
-  if (incorrectCount > 0) {
-    for (var option of incorrectOptions) {
-      if (!option.isUsedAsOption) {
-        option.isUsedAsOption = true;
-        options[count++] = option;
-        if (count === incorrectCount) break;
-      }
-    }
+  for (var i = 0; i < incorrectCount; i++) {
+    var op = incorrectOptions[i];
+    op.isUsedAsOption = true;
+    options[i] = op;
   }
   
-  // Pick correct option as 0
-  for (var option of correctOptions) {
-    if (!option.isUsedAsOption && !option.isUsedAsFeedback) {
-      option.isUsedAsOption = true;
-      options[count++] = option;
-      if (count === totalCount) break;
-    }
+  // Pick correct options
+  for (var i = 0; i < totalCount - incorrectCount; i++) {
+    var op = correctOptions[i];
+    op.isUsedAsOption = true;
+    options[i + incorrectCount] = op;
   }
 
   // Shuffle options
@@ -84,7 +87,7 @@ function loadQuestion() {
   $('#scene-question .btn-continue').addClass('btn-disabled');
   $('#scene-question .select').empty();
   q.options.forEach(function(option, i) {
-    console.log(option, i);
+    // console.log(option, i);
     $('#scene-question .select').append(buildOption(option, i));
     if (option.isCorrect) {
       $('#scene-correct p').text(q.feedback);
